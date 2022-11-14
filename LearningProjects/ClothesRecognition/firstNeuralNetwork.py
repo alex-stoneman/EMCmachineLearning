@@ -79,7 +79,7 @@ def use_model(display=False):
     print("Test loss", test_loss)
     if display:
         for x in range(len(test_images)):
-            plt.title(f"Prediction:{class_names[np.argmax(predictions[x])]}       Label:{class_names[test_labels[x]]}")
+            plt.title(f"{class_names[np.argmax(predictions[x])]} = {class_names[test_labels[x]]}")
             plt.imshow(test_images[x])
             plt.show(block=False)
             plt.figure()
