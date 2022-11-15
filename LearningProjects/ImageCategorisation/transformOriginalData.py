@@ -24,10 +24,10 @@ for item in data_fir:
         values = pygame.surfarray.array3d(chessImage)
         if count % 2 == 0:
             trainImageData[count//2] = values
-            trainImageLabels[count//2] = item
+            trainImageLabels[count//2] = labels.index(item)
         else:
             evalImageData[(count-1)//2] = values
-            evalImageLabels[(count-1)//2] = item
+            evalImageLabels[(count-1)//2] = labels.index(item)
         count += 1
 
 
