@@ -14,7 +14,7 @@ class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
 fashion_mnist = tf.keras.datasets.fashion_mnist  # load dataset
 (train_images, train_labels), (test_images, test_labels) = fashion_mnist.load_data()  # split into testing and training
 
-# print(train_images.shape)
+print(train_images.shape)
 # print(train_images[0, 23, 23])
 # print(train_labels)
 #
