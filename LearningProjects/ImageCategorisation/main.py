@@ -41,6 +41,7 @@ model.compile(optimizer='adam',
 trainData = trainImages / 255.0
 evalData = evalImages / 255.0
 
+
 def train_a_neural_network():
     numOfEpoch = int(input("How many epoch: "))
     # This is a function to save the model
@@ -52,6 +53,7 @@ def train_a_neural_network():
     # Evaluate the model which has benn created
     print("Ends here")
 
+
 def use_model(display=False):
     model.load_weights(checkpoint_path)
     test_loss, test_acc = model.evaluate(evalData,  evalLabels, verbose=1)
@@ -59,10 +61,10 @@ def use_model(display=False):
     print('Test accuracy:', test_acc)
     print("Test loss", test_loss)
 
-    pygame.init()
-    screen = pygame.display.set_mode((200, 200))
-    font = pygame.font.SysFont("freesansbold.ttf", 24)
     if display:
+        pygame.init()
+        screen = pygame.display.set_mode((200, 200))
+        font = pygame.font.SysFont("freesansbold.ttf", 24)
         for x in range(len(evalData)):
             # try:
             #     print("Prediction:", class_names[np.argmax(predictions[x])])
@@ -74,16 +76,17 @@ def use_model(display=False):
             #     raise TypeError
             screen.fill((255, 255, 255))
             temp = pygame.pixelcopy.make_surface(evalImages[x])
+
             screen.blit(temp, (75, 150))
 
             img = font.render('hello', True, "red")
             screen.blit(img, (50, 20))
 
             pygame.display.flip()
+            time.sleep(2)
 
 
-
-train_a_neural_network()
+# train_a_neural_network()
 use_model(True)
 
 # pygame.init()
